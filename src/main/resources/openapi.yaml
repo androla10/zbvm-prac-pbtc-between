@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Swagger Products - OpenAPI 3.0
+  description: |-
+    This is a sample Inditex Core Platform Server based on the OpenAPI 3.0 specification.  You can find out more about
+    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
+    You can now help us improve the API whether it's by making changes to the definition itself or to the code.
+    That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
+    
+    Some useful links:
+    - [The Inditex Core Platform repository](https://github.com/androla10/zbvm-prac-pbtc-between)
+    - [The source API definition for the Inditex Core Platform](https://github.com/androla10/zbvm-prac-pbtc-between/blob/master/src/main/resources/openapi.yaml)
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: villarreal.benji@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Inditex Core Platform
+  url: https://www.inditex.com
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: price
+    description: Everything about your Pricies
+    externalDocs:
+      description: Find out more
+      url: https://www.inditex.com
+paths:
+  /prices:
+    get:
+      tags:
+        - price
+      summary: Get Prices
+      description: Get All Prices
+      operationId: getAll
+      parameters:
+        - name: consultationDate
+          in: query
+          description: Applicable consultation date for the product
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: productId
+          in: query
+          description: Product identifier considered in the filter
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: brandId
+          in: query
+          description: Brand identifier considered in the filter
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PriceDto'
+        '400':
+          description: Invalid status value
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  schemas:
+    PriceDto:
+      type: object
+      properties:
+        brandId:
+          type: integer
+          format: int64
+          example: 1
+        startDate:
+          type: string
+          format: date-time
+          example: '23/03/1994'
+        endDate:
+          type: string
+          format: date-time
+          example: '23/03/1994'
+        priceList:
+          type: integer
+          format: int64
+          example: 1
+        productId:
+          type: integer
+          format: int64
+          example: 1
+        price:
+          type: number
+          format: double
+          example: 13.90
+        currency:
+          type: string
+          example: 'EUR'
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
