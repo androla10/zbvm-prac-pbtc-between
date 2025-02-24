@@ -1,8 +1,15 @@
 package pe.com.zbvm.application.usecases;
 
+import java.math.BigDecimal;
 import java.util.List;
+import pe.com.zbvm.domain.entity.Brand;
 import pe.com.zbvm.domain.entity.Price;
+import pe.com.zbvm.domain.entity.Product;
+import pe.com.zbvm.domain.vo.Currency;
+import pe.com.zbvm.domain.vo.EndDate;
 import pe.com.zbvm.domain.vo.PriceCriteria;
+import pe.com.zbvm.domain.vo.Priority;
+import pe.com.zbvm.domain.vo.StartDate;
 
 /**
  * <br/> PriceManagementUseCase <br/>
@@ -23,4 +30,12 @@ import pe.com.zbvm.domain.vo.PriceCriteria;
  */
 public interface PriceManagementUseCase {
   List<Price> findAllByCriteria(PriceCriteria priceCriteria);
+  Price createPrice(Brand brand,
+                    StartDate startDate,
+                    EndDate endDate,
+                    Product product,
+                    BigDecimal price,
+                    Currency currency,
+                    Priority priority);
+  Price persistPrice(Price price);
 }

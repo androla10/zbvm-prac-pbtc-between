@@ -7,7 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="184481c5-9952-4cba-a555-acdcfb8fb24a" name="Changes" comment="" />
+    <list default="true" id="184481c5-9952-4cba-a555-acdcfb8fb24a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/input/BrandManagementInputPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/output/BrandManagementOutputPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/usecases/BrandManagementUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/output/mysql/BrandManagementMysqlAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/output/mysql/repository/BrandManagementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/BrandMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/input/PriceManagementInputPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/input/PriceManagementInputPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/output/PriceManagementOutputPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/output/PriceManagementOutputPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/usecases/PriceManagementUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/usecases/PriceManagementUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/PriceManagementAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/PriceManagementAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/handlers/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/handlers/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/output/mysql/PriceManagementMySqlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/output/mysql/PriceManagementMySqlAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/PriceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/PriceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/openapi.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,15 +33,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -47,17 +67,23 @@
     "Maven.zbvm-prac-pbtc-between [compile].executor": "Run",
     "Maven.zbvm-prac-pbtc-between [install].executor": "Run",
     "Maven.zbvm-prac-pbtc-between [test].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Desarrollo/GithubProjects/zbvm-prac-pbtc-between/src/test",
+    "last_opened_file_path": "D:/Desarrollo/GithubProjects/-Designing-Hexagonal-Architecture-with-Java---Second-Edition",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,6 +97,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="pe.com.zbvm.infrastructure.helpers.mappers" />
       <recent name="pe.com.zbvm.infrastructure.adapters.input.rest" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pe.com.zbvm.infrastructure.adapters.output.mysql.repository" />
     </key>
   </component>
   <component name="RunManager" selected="Application.InditexApplication">
@@ -159,8 +188,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727872964445</updated>
+      <workItem from="1740376825859" duration="10440000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -169,6 +202,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/handlers/GlobalExceptionHandler.java</url>
           <line>58</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/adapters/input/rest/PriceManagementAdapter.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/PriceMapper.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pe/com/zbvm/infrastructure/helpers/mappers/BrandMapper.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pe/com/zbvm/application/ports/input/PriceManagementInputPort.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

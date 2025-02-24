@@ -1,6 +1,8 @@
 package pe.com.zbvm.infrastructure.helpers.mappers;
 
+import java.math.BigDecimal;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pe.com.zbvm.domain.entity.Brand;
 import pe.com.zbvm.domain.entity.Price;
@@ -36,6 +38,7 @@ import pe.com.zbvm.infrastructure.adapters.output.mysql.data.ProductData;
  * @version 1.0
  */
 @Component
+@RequiredArgsConstructor
 public class PriceMapper {
 
   public PriceDto priceDomainToDto(Price price) {
@@ -63,6 +66,19 @@ public class PriceMapper {
         .price(priceData.getPrice()).build();
   }
 
+  public PriceData priceToData(Price price) {
+    return PriceData.builder()
+        .id(price.id().getId())
+        .brand(brandToData(price.brand()))
+        .product(productToData(price.product()))
+        .startDate(price.startDate().getStartDate())
+        .endDate(price.endDate().getEndDate())
+        .currency(price.currency().getCurrency())
+        .price(price.price())
+        .priority(price.priority().getPriority())
+        .build();
+  }
+
   public Product productDataToDomain(ProductData productData) {
     return Product.builder()
         .id(Id.withId(productData.getId()))
@@ -74,6 +90,18 @@ public class PriceMapper {
     return Brand.builder()
         .id(Id.withId(brandData.getId()))
         .name(brandData.getName())
+        .build();
+  }
+
+  public BrandData brandToData(Brand brand) {
+    return BrandData.builder()
+                    .id(brand.id().getId())
+                    .build();
+  }
+
+  public ProductData productToData(Product product) {
+    return ProductData.builder()
+        .id(product.id().getId())
         .build();
   }
 

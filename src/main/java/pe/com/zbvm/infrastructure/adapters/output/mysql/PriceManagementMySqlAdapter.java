@@ -71,4 +71,12 @@ public class PriceManagementMySqlAdapter implements PriceManagementOutputPort {
         .stream().map(mapper::priceDataToDomain)
         .toList();
   }
+
+  @Override
+  public Price persist(Price price) {
+    var priceData = mapper.priceToData(price);
+    entityManager.persist(priceData);
+
+    return price;
+  }
 }

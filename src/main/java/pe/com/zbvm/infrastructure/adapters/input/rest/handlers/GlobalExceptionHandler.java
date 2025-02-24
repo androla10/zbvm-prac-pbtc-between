@@ -80,12 +80,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
   @ExceptionHandler(Exception.class)
   public final ResponseEntity<Map<String, List<String>>> handleGeneralExceptions(Exception ex) {
     List<String> errors = Collections.singletonList(ex.getMessage());
+    log.error(ex.getMessage());
     return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
   }
 
   @ExceptionHandler(RuntimeException.class)
   public final ResponseEntity<Map<String, List<String>>> handleRuntimeExceptions(RuntimeException ex) {
     List<String> errors = Collections.singletonList(ex.getMessage());
+    ex.printStackTrace();
     return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
   }
 

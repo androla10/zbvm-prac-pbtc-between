@@ -30,6 +30,26 @@ tags:
       url: https://www.inditex.com
 paths:
   /prices:
+    post:
+      tags:
+        - price
+      summary: Create Price
+      description: Create New Price
+      operationId: create
+      requestBody:
+        description: Create a new price in the application
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceDto'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDto'
     get:
       tags:
         - price
