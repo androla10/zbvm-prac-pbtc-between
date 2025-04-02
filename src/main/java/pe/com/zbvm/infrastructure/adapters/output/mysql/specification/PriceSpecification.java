@@ -1,6 +1,7 @@
 package pe.com.zbvm.infrastructure.adapters.output.mysql.specification;
 
 import jakarta.persistence.criteria.Join;
+import jakarta.persistence.criteria.Order;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import org.springframework.data.jpa.domain.Specification;
@@ -26,6 +27,11 @@ import pe.com.zbvm.infrastructure.adapters.output.mysql.data.ProductData;
  * @version 1.0
  */
 public class PriceSpecification {
+
+  private PriceSpecification() {
+    throw new IllegalStateException("PriceSpecification class");
+  }
+
   public static Specification<PriceData> hasProduct(Long productId) {
     return (price, cq, cb) -> {
       Join<PriceData, ProductData> joinProduct = price.join("product");
@@ -54,15 +60,6 @@ public class PriceSpecification {
       }
 
       return cb.between(cb.literal(consultationDate), price.get("startDate"), price.get("endDate"));
-    };
-  }
-
-  public static Specification<PriceData> orderByDescPriority() {
-    return (price, cq, cb) -> {
-      if (cq != null) {
-        cq.orderBy(cb.desc(price.get("priority")));
-      }
-      return null;
     };
   }
 }

@@ -14,22 +14,22 @@ import lombok.extern.slf4j.Slf4j;
 @EqualsAndHashCode
 @Slf4j
 public class StartDate {
-  private final LocalDateTime startDate;
+  private final LocalDateTime value;
 
-  private StartDate(LocalDateTime startDate) {
-    this.startDate = getDefaultDateWhenIsNull(startDate);
+  private StartDate(LocalDateTime value) {
+    this.value = getDefaultDateWhenIsNull(value);
   }
 
-  private LocalDateTime getDefaultDateWhenIsNull(LocalDateTime startDate) {
-    return Optional.ofNullable(startDate).orElse(LocalDateTime.now());
+  private LocalDateTime getDefaultDateWhenIsNull(LocalDateTime value) {
+    return Optional.ofNullable(value).orElse(LocalDateTime.now());
   }
 
   public OffsetDateTime getStartDateWithFormatClient() {
     ZoneId zoneId = ZoneId.systemDefault();
-    return this.startDate.atZone(zoneId).toOffsetDateTime();
+    return this.value.atZone(zoneId).toOffsetDateTime();
   }
 
-  public static StartDate withStartDate(LocalDateTime startDate) {
-    return new StartDate(startDate);
+  public static StartDate withValue(LocalDateTime value) {
+    return new StartDate(value);
   }
 }

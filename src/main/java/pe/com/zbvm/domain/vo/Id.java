@@ -1,7 +1,6 @@
 package pe.com.zbvm.domain.vo;
 
 
-import java.util.Optional;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -10,13 +9,13 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class Id {
-  private final Long id;
+  private final Long identifier;
 
-  private Id(Long id) {
-    this.id = id;
+  private Id(Long identifier) {
+    this.identifier = identifier;
   }
 
-  public static Id withId(long id) {
+  public static Id withIdentifier(long id) {
     return new Id(id);
   }
 

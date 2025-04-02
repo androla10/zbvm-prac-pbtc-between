@@ -13,7 +13,6 @@ import pe.com.zbvm.application.ports.output.PriceManagementOutputPort;
 import pe.com.zbvm.domain.entity.Price;
 import pe.com.zbvm.domain.vo.PriceCriteria;
 import pe.com.zbvm.infrastructure.adapters.output.mysql.data.PriceData;
-import pe.com.zbvm.infrastructure.adapters.output.mysql.repository.PriceManagementRepository;
 import pe.com.zbvm.infrastructure.adapters.output.mysql.specification.PriceSpecification;
 import pe.com.zbvm.infrastructure.helpers.mappers.PriceMapper;
 
@@ -38,15 +37,8 @@ import pe.com.zbvm.infrastructure.helpers.mappers.PriceMapper;
 @RequiredArgsConstructor
 public class PriceManagementMySqlAdapter implements PriceManagementOutputPort {
 
-  private final PriceManagementRepository repository;
   private final PriceMapper mapper;
   private final EntityManager entityManager;
-
-  @Override
-  public List<Price> getAll() {
-    return repository.findAll().stream()
-        .map(mapper::priceDataToDomain).toList();
-  }
 
   @Override
   public List<Price> findFirstByCriteriaOrderByDescPriority(PriceCriteria priceCriteria) {
@@ -55,13 +47,12 @@ public class PriceManagementMySqlAdapter implements PriceManagementOutputPort {
     Root<PriceData> root = cq.from(PriceData.class);
 
     Specification<PriceData> predicates =
-        Specification.where(PriceSpecification.hasProduct(priceCriteria.getProductId().getId()))
-            .and(PriceSpecification.hasBrand(priceCriteria.getBrandId().getId()))
-            .and(PriceSpecification.betweenStartDateAndEndDate(priceCriteria.getConsultationDate()
-                .getDate()))
-            .and(PriceSpecification.orderByDescPriority());
+        Specification.where(PriceSpecification.hasProduct(priceCriteria.getProductId().getIdentifier()))
+                     .and(PriceSpecification.hasBrand(priceCriteria.getBrandId().getIdentifier()))
+                     .and(PriceSpecification.betweenStartDateAndEndDate(priceCriteria.getConsultationDate().getDate()));
 
     cq.where(predicates.toPredicate(root, cq, criteriaBuilder));
+    cq.orderBy(criteriaBuilder.desc(root.get("priority")));
 
     TypedQuery<PriceData> query = entityManager.createQuery(cq);
     if (priceCriteria.getConsultationDate().isValid()) {

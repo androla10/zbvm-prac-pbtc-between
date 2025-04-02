@@ -22,6 +22,5 @@ import pe.com.zbvm.domain.vo.PriceCriteria;
  * @version 1.0
  */
 public interface PriceManagementOutputPort {
-  List<Price> getAll();
   List<Price> findFirstByCriteriaOrderByDescPriority(PriceCriteria priceCriteria);
 }

@@ -12,13 +12,13 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class EndDate {
-  private final LocalDateTime endDate;
+  private final LocalDateTime value;
 
-  private EndDate(LocalDateTime endDate) {
-    this.endDate = getDefaultDateWhenIsNull(endDate);
+  private EndDate(LocalDateTime value) {
+    this.value = getDefaultDateWhenIsNull(value);
   }
 
-  public static EndDate withEndDate(LocalDateTime endDate) {
+  public static EndDate withValue(LocalDateTime endDate) {
     return new EndDate(endDate);
   }
 
@@ -28,6 +28,6 @@ public class EndDate {
 
   public OffsetDateTime getEndDateWithFormatClient() {
     ZoneId zoneId = ZoneId.systemDefault();
-    return this.endDate.atZone(zoneId).toOffsetDateTime();
+    return this.value.atZone(zoneId).toOffsetDateTime();
   }
 }

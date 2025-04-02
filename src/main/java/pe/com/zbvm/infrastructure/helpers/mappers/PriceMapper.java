@@ -41,38 +41,38 @@ public class PriceMapper {
   public PriceDto priceDomainToDto(Price price) {
     var priceDto = new PriceDto();
     priceDto.setPrice(price.priceInDecimal());
-    priceDto.setPriceList(price.id().getId());
-    priceDto.setBrandId(price.brand().id().getId());
-    priceDto.setProductId(price.product().id().getId());
+    priceDto.setPriceList(price.id().getIdentifier());
+    priceDto.setBrandId(price.brand().id().getIdentifier());
+    priceDto.setProductId(price.product().id().getIdentifier());
     priceDto.setStartDate(price.startDate().getStartDateWithFormatClient());
     priceDto.setEndDate(price.endDate().getEndDateWithFormatClient());
-    priceDto.setCurrency(price.currency().getCurrency());
+    priceDto.setCurrency(price.currency().getCode());
 
     return priceDto;
   }
 
   public Price priceDataToDomain(PriceData priceData) {
     return Price.builder()
-        .id(Id.withId(priceData.getId()))
+        .id(Id.withIdentifier(priceData.getId()))
         .brand(brandDataToDomain(priceData.getBrand()))
         .product(productDataToDomain(priceData.getProduct()))
-        .priority(Priority.withPriority(priceData.getPriority()))
-        .currency(Currency.withCurrency(priceData.getCurrency()))
-        .startDate(StartDate.withStartDate(priceData.getStartDate()))
-        .endDate(EndDate.withEndDate(priceData.getEndDate()))
+        .priority(Priority.withValue(priceData.getPriority()))
+        .currency(Currency.withCode(priceData.getCurrency()))
+        .startDate(StartDate.withValue(priceData.getStartDate()))
+        .endDate(EndDate.withValue(priceData.getEndDate()))
         .price(priceData.getPrice()).build();
   }
 
   public Product productDataToDomain(ProductData productData) {
     return Product.builder()
-        .id(Id.withId(productData.getId()))
+        .id(Id.withIdentifier(productData.getId()))
         .name(productData.getName())
         .build();
   }
 
   public Brand brandDataToDomain(BrandData brandData) {
     return Brand.builder()
-        .id(Id.withId(brandData.getId()))
+        .id(Id.withIdentifier(brandData.getId()))
         .name(brandData.getName())
         .build();
   }
@@ -87,13 +87,13 @@ public class PriceMapper {
 
   private Id getIdForProductId(PriceCriteriaRequest criteria) {
     return Optional.ofNullable(criteria.getProductId())
-        .map(Id::withId)
+        .map(Id::withIdentifier)
         .orElse(Id.withIdNull());
   }
 
   private Id getIdForBrandId(PriceCriteriaRequest criteria) {
     return Optional.ofNullable(criteria.getBrandId())
-        .map(Id::withId)
+        .map(Id::withIdentifier)
         .orElse(Id.withIdNull());
   }
 }

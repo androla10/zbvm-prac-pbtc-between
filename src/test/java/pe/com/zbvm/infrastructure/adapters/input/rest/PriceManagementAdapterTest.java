@@ -50,7 +50,7 @@ class PriceManagementAdapterTest {
 
   @Test
   @DisplayName("Given The Data Is Loaded With Four Records When Request Data Of The Service Then The Api Shows All Four Records")
-  public void givenTheDataIsLoadedWithFourRecords_WhenRequestDataOfTheService_ThenTheApiShowsAllFourRecords()
+  void givenTheDataIsLoadedWithFourRecords_WhenRequestDataOfTheService_ThenTheApiShowsAllFourRecords()
       throws Exception {
     var expectedLoadedRecords = 4;
 
@@ -67,7 +67,7 @@ class PriceManagementAdapterTest {
       "When service data is requested at {0}:00 hrs on the {1}th for product {2} and brand {3}" +
           " Then The final price is {4}")
   @MethodSource("returnAllCasesForPrices")
-  public void test1(int hour, int day, Long productId, Long brandId, BigDecimal priceExpected)
+  void allTests(int hour, int day, Long productId, Long brandId, BigDecimal priceExpected)
       throws Exception {
     var expectedRecord = 1;
     var consultationDate = OffsetDateTime.of(2020, 6, day, hour, 0, 0, 0, ZoneOffset.UTC);

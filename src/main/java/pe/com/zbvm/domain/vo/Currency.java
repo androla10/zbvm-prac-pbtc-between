@@ -8,13 +8,13 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class Currency {
-  private final String currency;
+  private final String code;
 
-  private Currency(String currency) {
-    this.currency = currency;
+  private Currency(String code) {
+    this.code = code;
   }
 
-  public static Currency withCurrency(String currency) {
+  public static Currency withCode(String currency) {
     if (isInvalidCurrency(currency)) {
       throw new IllegalArgumentException("Invalid currency");
     }

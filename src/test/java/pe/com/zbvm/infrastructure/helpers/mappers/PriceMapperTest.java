@@ -46,15 +46,15 @@ class PriceMapperTest {
 
   @Test
   @DisplayName("Return A PriceDto When Send Price Of Type Domain")
-  public void returnPriceDtoWhenSendPriceDomain() {
+  void returnPriceDtoWhenSendPriceDomain() {
     Price price = Price.builder()
-        .id(Id.withId(1))
-        .brand(Brand.builder().id(Id.withId(1)).build())
-        .product(Product.builder().id(Id.withId(1)).build())
-        .startDate(StartDate.withStartDate(LocalDateTime.now()))
+        .id(Id.withIdentifier(1))
+        .brand(Brand.builder().id(Id.withIdentifier(1)).build())
+        .product(Product.builder().id(Id.withIdentifier(1)).build())
+        .startDate(StartDate.withValue(LocalDateTime.now()))
         .price(new BigDecimal("10.3"))
-        .currency(Currency.withCurrency("EUR"))
-        .endDate(EndDate.withEndDate(LocalDateTime.now()))
+        .currency(Currency.withCode("EUR"))
+        .endDate(EndDate.withValue(LocalDateTime.now()))
                       .build();
 
     var actual = mapper.priceDomainToDto(price);
@@ -68,7 +68,7 @@ class PriceMapperTest {
 
   @Test
   @DisplayName("Return PriceDomain When Send PriceData")
-  public void returnPriceDomainWhenSendPriceData() {
+  void returnPriceDomainWhenSendPriceData() {
     PriceData priceData = PriceData.builder()
         .id(1L)
         .priceList(1)
@@ -84,10 +84,10 @@ class PriceMapperTest {
     var actual = mapper.priceDataToDomain(priceData);
 
     assertAll(
-        () -> assertNotNull(actual.brand().id().getId()),
-        () -> assertNotNull(actual.product().id().getId()),
-        () -> assertNotNull(actual.endDate().getEndDate()),
-        () -> assertNotNull(actual.endDate().getEndDate())
+        () -> assertNotNull(actual.brand().id().getIdentifier()),
+        () -> assertNotNull(actual.product().id().getIdentifier()),
+        () -> assertNotNull(actual.endDate().getValue()),
+        () -> assertNotNull(actual.endDate().getValue())
     );
   }
 }

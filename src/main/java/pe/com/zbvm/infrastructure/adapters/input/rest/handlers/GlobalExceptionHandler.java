@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
@@ -57,7 +56,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                                                                 HttpStatusCode status,
                                                                 WebRequest request) {
     List<String> errors = ex.getBindingResult().getFieldErrors()
-        .stream().map(FieldError::getDefaultMessage).collect(Collectors.toList());
+        .stream().map(FieldError::getDefaultMessage).toList();
     return new ResponseEntity<>(getErrorsMap(errors), new HttpHeaders(), HttpStatus.BAD_REQUEST);
   }
 

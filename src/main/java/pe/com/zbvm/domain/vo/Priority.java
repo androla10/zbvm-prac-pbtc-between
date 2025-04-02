@@ -8,13 +8,13 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class Priority {
-  private final Byte priority;
+  private final Byte value;
 
-  private Priority(Byte priority) {
-    this.priority = priority;
+  private Priority(Byte value) {
+    this.value = value;
   }
 
-  public static Priority withPriority(Byte priority) {
-    return new Priority(priority);
+  public static Priority withValue(Byte value) {
+    return new Priority(value);
   }
 }

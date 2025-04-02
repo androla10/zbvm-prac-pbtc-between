@@ -90,7 +90,6 @@
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                                 <useSpringBoot3>true</useSpringBoot3>
-                                <!--<reactive>true</reactive>-->
                             </configOptions>
                         </configuration>
                     </execution>
