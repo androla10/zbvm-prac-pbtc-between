@@ -1,6 +1,7 @@
 package pe.com.zbvm.infrastructure.helpers.mappers;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.math.BigDecimal;
@@ -55,14 +56,17 @@ class PriceMapperTest {
         .price(new BigDecimal("10.3"))
         .currency(Currency.withCode("EUR"))
         .endDate(EndDate.withValue(LocalDateTime.now()))
-                      .build();
+        .build();
 
     var actual = mapper.priceDomainToDto(price);
 
     assertAll(
+        () -> assertEquals(1, actual.getBrandId()),
+        () -> assertEquals(1, actual.getProductId()),
         () -> assertNotNull(actual.getStartDate()),
         () -> assertNotNull(actual.getEndDate()),
-        () -> assertNotNull(actual.getBrandId())
+        () -> assertEquals(Double.valueOf("10.3"), actual.getPrice()),
+        () -> assertEquals("EUR", actual.getCurrency())
     );
   }
 
@@ -84,6 +88,14 @@ class PriceMapperTest {
     var actual = mapper.priceDataToDomain(priceData);
 
     assertAll(
+        () -> assertEquals(1, actual.id().getIdentifier()),
+        () -> assertEquals(Double.valueOf("10.3"), actual.price().doubleValue()),
+        () -> assertEquals(Byte.valueOf("1"), actual.priority().getValue()),
+        () -> assertNotNull(actual.brand().id().getIdentifier()),
+        () -> assertNotNull(actual.product().id().getIdentifier()),
+        () -> assertNotNull(actual.startDate().getValue()),
+        () -> assertNotNull(actual.endDate().getValue()),
+        () -> assertEquals("EUR", actual.currency().getCode()),
         () -> assertNotNull(actual.brand().id().getIdentifier()),
         () -> assertNotNull(actual.product().id().getIdentifier()),
         () -> assertNotNull(actual.endDate().getValue()),

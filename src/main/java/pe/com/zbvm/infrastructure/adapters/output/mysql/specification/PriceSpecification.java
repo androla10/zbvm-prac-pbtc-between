@@ -1,7 +1,6 @@
 package pe.com.zbvm.infrastructure.adapters.output.mysql.specification;
 
 import jakarta.persistence.criteria.Join;
-import jakarta.persistence.criteria.Order;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import org.springframework.data.jpa.domain.Specification;
