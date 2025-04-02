@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "b7936a9e-4b3e-4a48-aff7-4cec9afa7e1d",
+		"name": "Inditex Core Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1758654"
+	},
+	"item": [
+		{
+			"name": "Api Price",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-16T21:00:00-05:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"prices"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								},
+								{
+									"key": "consultationDate",
+									"value": "2020-06-16T21:00:00-05:00"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Test 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-14T10:00:00-05:00",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"prices"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "35455"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "consultationDate",
+											"value": "2020-06-14T10:00:00-05:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Oct 2024 20:57:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"brandId\": 1,\n        \"startDate\": \"2020-06-14T00:00:00-05:00\",\n        \"endDate\": \"2020-12-31T23:59:59-05:00\",\n        \"priceList\": 1,\n        \"productId\": 35455,\n        \"price\": 35.5,\n        \"currency\": \"EUR\"\n    }\n]"
+						},
+						{
+							"name": "Test 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-14T16:00:00-05:00",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"prices"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "35455"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "consultationDate",
+											"value": "2020-06-14T16:00:00-05:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Oct 2024 21:35:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"brandId\": 1,\n        \"startDate\": \"2020-06-14T15:00:00-05:00\",\n        \"endDate\": \"2020-06-14T18:30:00-05:00\",\n        \"priceList\": 2,\n        \"productId\": 35455,\n        \"price\": 25.45,\n        \"currency\": \"EUR\"\n    }\n]"
+						},
+						{
+							"name": "Test 3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-14T21:00:00-05:00",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"prices"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "35455"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "consultationDate",
+											"value": "2020-06-14T21:00:00-05:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Oct 2024 20:59:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"brandId\": 1,\n        \"startDate\": \"2020-06-14T00:00:00-05:00\",\n        \"endDate\": \"2020-12-31T23:59:59-05:00\",\n        \"priceList\": 1,\n        \"productId\": 35455,\n        \"price\": 35.5,\n        \"currency\": \"EUR\"\n    }\n]"
+						},
+						{
+							"name": "Test 4",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-15T10:00:00-05:00",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"prices"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "35455"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "consultationDate",
+											"value": "2020-06-15T10:00:00-05:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Oct 2024 21:36:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"brandId\": 1,\n        \"startDate\": \"2020-06-15T00:00:00-05:00\",\n        \"endDate\": \"2020-06-15T11:00:00-05:00\",\n        \"priceList\": 3,\n        \"productId\": 35455,\n        \"price\": 30.5,\n        \"currency\": \"EUR\"\n    }\n]"
+						},
+						{
+							"name": "Test 5",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/prices?productId=35455&brandId=1&consultationDate=2020-06-16T21:00:00-05:00",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"prices"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "35455"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "consultationDate",
+											"value": "2020-06-16T21:00:00-05:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Oct 2024 21:38:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"brandId\": 1,\n        \"startDate\": \"2020-06-15T16:00:00-05:00\",\n        \"endDate\": \"2020-12-31T23:59:59-05:00\",\n        \"priceList\": 4,\n        \"productId\": 35455,\n        \"price\": 38.95,\n        \"currency\": \"EUR\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

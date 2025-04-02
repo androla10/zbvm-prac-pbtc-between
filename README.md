@@ -11,8 +11,8 @@ Esta es una API REST construida con **Spring Boot** que sigue la arquitectura he
 
 1. **Clonar el Repositorio**:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_REPOSITORIO>
+   git clone https://github.com/androla10/zbvm-prac-pbtc-between
+   cd zbvm-prac-pbtc-between
    ```
 
 2. **Configurar el Entorno**:
@@ -35,7 +35,7 @@ Para levantar el proyecto, utiliza el siguiente comando:
 mvn spring-boot:run
 ```
 
-La aplicación estará disponible en `http://localhost:8080/prices`.
+La aplicación estará disponible en `http://localhost:8091/prices`.
 
 ## Endpoints
 
@@ -57,6 +57,7 @@ La aplicación estará disponible en `http://localhost:8080/prices`.
             }
       ]
         ```
+      
 ## Pruebas
 
 La aplicación incluye pruebas de integración y unitarias. Puedes ejecutarlas utilizando el siguiente comando:
@@ -65,6 +66,10 @@ mvn test
 ```
 
 Las pruebas están configuradas para asegurar la correcta funcionalidad de la API y su lógica de negocio.
+
+## Postman
+Puedes encontrar en la ruta raíz la colección de postman para su uso.
+[Postman Collections](Inditex%20Core%20Platform.postman_collection.json).
 
 ## Contribuciones
 
